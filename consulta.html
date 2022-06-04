@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bt{
+            display: flex;
+            justify-content: center;
+        }
+        table{
+            color: white;
+            margin:auto;
+        }
+      
+        button{
+            background-color:  rgb(9, 146, 146);
+            color: white;
+            border-radius: 4px;
+        }
+        button:hover{
+            background-color: white;
+            color:  rgb(9, 146, 146);
+        }
+        hr{
+            color: rgb(2, 80, 80);
+        }
+    </style>
+</head>
+<body>
+    <div class="bt">
+    <button onclick="load()">Pesquisar Clientes</button>
+    </div>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Fone</th>
+            </tr>
+        </thead>
+        <tbody id="mostrar">
+
+        </tbody>
+    </table>
+
+    <script>
+        function load(){
+            fetch("http://localhost:3000/clientes")
+            .then(x => x.json())
+            .then(y => display(y))
+        }
+        function display(dados){
+            var tabela = ""
+            for(let i = 0; i < dados.length ; i++){
+                tabela += `<tr>
+                <td>${dados[i].id}</td>
+                <td>${dados[i].nome}</td>
+                <td>${dados[i].email}</td>
+                <td>${dados[i].fone}</td>
+                </tr>`
+            }
+            document.getElementById("mostrar").innerHTML = tabela
+        }
+
+    </script>
+</body>
+</html>
