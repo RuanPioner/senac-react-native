@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bt{
+            display: flex;
+            justify-content: center;
+        }
+        table{
+            color: white;
+            margin: auto;
+        }
+        button{
+            background-color:  rgb(9, 146, 146);
+            color: white;
+            border-radius: 4px;
+        }
+        button:hover{
+            background-color: white;
+            color:  rgb(9, 146, 146);
+        }
+        hr{
+            color: rgb(2, 80, 80);
+        }
+    </style>
+</head>
+<body>
+    <div class="bt">
+    <button onclick="produtos()">Pesquisar Produtos</button>
+    </div>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Descriçao</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody id="mostrarprod">
+
+        </tbody>
+    </table>
+
+    <script>
+         function produtos(){
+            fetch("http://localhost:3000/produtos")
+            .then(x => x.json())
+            .then(y => displayP(y))
+        }
+        function displayP(dados){
+            var tabela = ""
+            for(let i = 0; i < dados.length ; i++){
+                tabela += `<tr>
+                <td>${dados[i].id}</td>
+                <td>${dados[i].descricao}</td>
+                <td>${dados[i].preco}</td>
+                <td>${dados[i].qtde}</td>
+                </tr>`
+            }
+            document.getElementById("mostrarprod").innerHTML = tabela
+        }
+    </script>
+</body>
+</html>
