@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            width: 20px;
+            background-color: rgb(9, 146, 146);
+            border-radius: 5px;
+            margin: auto;
+        }
+        label{
+            color: white;
+        }
+        legend{
+            color: white;
+        }
+        button{
+            color: white;
+            background-color: rgb(2, 80, 80);
+            padding: 3px;
+            border-radius: 5px;
+            margin-top: 3px;
+            width: 50px;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+    <legend>Login</legend>
+    <label>Informe seu Email :</label><br>
+    <input type="email" placeholder="Informe seu email" /><br>
+    <label>Informe sua senha:</label><br>
+    <input type="password" placeholder="Informe sua senha" /><br>
+    <button onclick="login()">Login</button>
+    </fieldset>
+
+    <script>
+        function login(){
+            localStorage.setItem("usuario", document.getElementsByTagName("input")[0].value)
+            parent.location.href = 'indexlayout.html'
+        }
+    </script>
+</body>
+</html>
