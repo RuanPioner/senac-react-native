@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(2, 51, 51);
+        }
+        iframe{
+            width: 100%;
+            height: 100%;
+            margin-top:20px;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+        }
+        a{
+            margin-left: 10px;
+            text-decoration: none;
+            background-color: rgb(9, 146, 146);
+            border-radius: 5px;
+            color: white;
+            padding: 3px;
+        }
+        a:hover{
+            background-color: white;
+            color: rgb(9, 146, 146) ;
+        }
+        iframe{
+            color:rgb(2, 80, 80);
+        }
+        button{
+            color: white;
+            background-color: rgb(9, 146, 146) ;
+            padding: 3px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="">
+        <a href="consulta.html" target="centro">Consuta Clientes</a>
+        <a href="consultaprod.html" target="centro">Consuta Produtos</a>
+
+        <label id="usuariologado"></label>
+        <button id="login" onclick="login()">Login</button>
+        <button id="logout" onclick="logout()">Logout</button>
+    </nav>
+    <iframe src="consulta.html" name="centro"></iframe>
+
+    <script>
+        function login(){
+            document.getElementsByTagName("iframe")[0].src = 'login.html'
+        }
+
+        function logout(){
+            localStorage.removeItem("usuario")
+            window.location.reload()
+        }
+
+        var userlogado = localStorage.getItem("usuario")
+        document.getElementById("usuariologado").innerHTML = userlogado
+
+        if(userlogado == null){
+            document.getElementById("login").style = "display: block"
+            document.getElementById("logout").style = "display: none"
+            showItensLogado("none")
+        }else{
+            document.getElementById("login").style = "display: none"
+            document.getElementById("logout").style = "display: block"
+            showItensLogado("block")
+        }
+
+        function showItensLogado(mostrar){
+            document.getElementsByTagName("a")[0].style = `display:${mostrar}`
+            document.getElementsByTagName("a")[1].style = `display:${mostrar}`
+
+        }
+    </script>
+</body>
+</html>
