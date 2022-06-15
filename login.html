@@ -26,15 +26,19 @@
             width: 50px;
             margin-left: 50px;
         }
+        button:hover{
+            background-color: white;
+            color: rgb(2, 80, 80);
+        }
     </style>
 </head>
 <body>
     <fieldset>
     <legend>Login</legend>
-    <label>Informe seu Email :</label><br>
-    <input type="email" placeholder="Informe seu email" /><br>
-    <label>Informe sua senha:</label><br>
-    <input type="password" placeholder="Informe sua senha" /><br>
+    <label for="email">Informe seu Email :</label><br>
+    <input type="email" id="email" placeholder="Informe seu email" /><br>
+    <label for="senha">Informe sua senha:</label><br>
+    <input type="password" id="senha" placeholder="Informe sua senha" /><br>
     <button onclick="login()">Login</button>
     </fieldset>
 

@@ -1,0 +1,37 @@
+{
+"clientes": [{
+    "id": 1,
+    "nome":"josé kleber",
+    "email":"klebao@gmail.com",
+    "fone":"123-123"    
+},
+   {
+    "id": 2,
+    "nome":"augusto kleber",
+    "email":"agu@gmail.com",
+    "fone":"123-312" 
+},   
+
+   {
+    "id": 3,
+    "nome":"antoni kleber",
+    "email":"antonao@gmail.com",
+    "fone":"12313-312"    
+}],
+
+    "produtos": [{
+        "id": 1,
+        "descricao":"feijao",
+        "preco":15,
+        "qtde": 5
+        
+},
+{
+    "id": 2,
+    "descricao":"arroz",
+    "preco":20,
+    "qtde": 10
+    
+}
+]
+}

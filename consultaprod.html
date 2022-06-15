@@ -12,6 +12,7 @@
         table{
             color: white;
             margin: auto;
+            margin-top: 5px;
         }
         button{
             background-color:  rgb(9, 146, 146);
@@ -25,13 +26,27 @@
         hr{
             color: rgb(2, 80, 80);
         }
+        h1{
+            color: white;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+        }
+        .tabela{
+            background-color: rgb(9, 146, 146);
+            width: 300px;
+            margin: auto;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
+    <h1>Consultar Produtos</h1>
+    <hr>
     <div class="bt">
     <button onclick="produtos()">Pesquisar Produtos</button>
     </div>
-    <hr>
+    <div class="tabela">
     <table>
         <thead>
             <tr>
@@ -45,6 +60,7 @@
 
         </tbody>
     </table>
+    </div>
 
     <script>
          function produtos(){
